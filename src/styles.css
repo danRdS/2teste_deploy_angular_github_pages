@@ -8,9 +8,9 @@
 }
 
 body {
-    background-color: #21212a;
+    background-color: #030319;
     color: #e7e7e7;
-    background-image: url('https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABZXDN_o6VQuS6SxaFQIgNQorNAhF0EzM2oIfeyazF4Rbw_lV9FAj8HKlDBhhpgeAKrvKcWYD3Q_IZuRG0zKunjESp3qGctpZZ0Vz.jpg?r=e4f');
+    background-image: url('https://i.pinimg.com/originals/f4/8d/55/f48d55f7ba274bdbc921a7204e842f63.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,16 +20,16 @@ body {
 .container {
     margin: 7rem 1rem 2rem;
     padding: 1rem;
-    border-radius: .3rem;
-    /* background-color: rgba(255, 255, 255, .2); */
-    /* backdrop-filter: blur(2px); */
 }
 
 .link {
-    color: gold;
     width: max-content;
     display: block;
     margin: 1rem auto;
+    font-weight: 500;
+    color: #ffd700;
+    text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+    white-space: nowrap;
 }
 
 .link:after {
@@ -38,12 +38,13 @@ body {
     margin-top: .2rem;
     width: 100%;
     height: 2px;
-    background-color: gold;
+    background-color: #ffd700;
     border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
     transform: scaleX(0);
     transition:  transform .3s ease-in-out;
 }
 
-.link:hover:after {
+.link:hover:after { 
     transform: scaleX(1);
 }
