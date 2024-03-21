@@ -1,0 +1,19 @@
+h3 { margin-bottom: 1rem; }
+
+p { text-shadow: 0 0 5px rgb(0, 0, 0); }
+
+figure {
+    width: clamp(280px, 70vw, 800px);
+    height: clamp(150px, 70vw, 400px);
+    overflow: hidden;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    margin: 1rem auto;
+    border-radius: .3rem;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
