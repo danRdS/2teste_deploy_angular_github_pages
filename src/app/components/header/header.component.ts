@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   sombrear: boolean = false;
+  menu_aberto: boolean = false;
+  menu_mobile_aberto: boolean = false;
+  submenuAberto: number = 0;
 
   constructor() { }
 
@@ -18,7 +21,25 @@ export class HeaderComponent implements OnInit {
         this.sombrear = false;
       }
     }
+  }
 
+  abrirFecharMenu(): void {
+    this.menu_aberto = !this.menu_aberto;
+
+    if(this.menu_aberto) {
+      this.menu_mobile_aberto = true;
+    } else {
+      this.submenuAberto = 0;
+      setTimeout(() => this.menu_mobile_aberto = false, 500);
+    }
+  }
+
+  abrirSubmenu(index: number): void {
+    if(this.submenuAberto == index) {
+      this.submenuAberto = 0;
+    } else {
+      this.submenuAberto = index;
+    }
   }
 
 }

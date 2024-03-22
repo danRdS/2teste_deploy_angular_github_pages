@@ -2,13 +2,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     position: fixed;
     top: 0;
     width: 100%;
     background-color: transparent;
     padding: 1rem;
     z-index: 1;
-    transition: all .3s linear;
+    transition: all .5s linear;
 }
 
 header.sombreado { 
@@ -30,6 +31,8 @@ header.sombreado {
 .opcao_menu {
     background-color: transparent;
     color: #e7e7e7;
+    display: block;
+    margin: auto;
     border: none;
     font-weight: 500;
     font-size: 1.1rem;
@@ -66,4 +69,101 @@ header.sombreado {
     display: block;
 }
 
-.submenu li a:hover { background-color: rgb(62, 55, 70); }
+.submenu li a:hover { background: rgb(62, 55, 70); }
+
+/* menu mobile */
+#btnMenu { 
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+#btnMenu.ativo { 
+    display: none;
+    background-color: rgb(73, 65, 82);
+}
+
+.barra {
+    display: block;
+    background-color: #e7e7e7;
+    width: 32px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all .3s ease-in-out;
+}
+
+#btnMenu.ativo .barra:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+#btnMenu.ativo .barra:nth-child(2) { opacity: 0; }
+#btnMenu.ativo .barra:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.menu_mobile { 
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+}
+
+.menu_mobile li { 
+    overflow: hidden;
+    margin-block: .5rem;
+}
+
+.submenuMobile {
+    max-height: 0;
+    min-width: 120px;
+    max-width: max-content;
+    margin: auto;
+    transition: max-height .6s ease-in-out;
+}
+
+.submenuMobile li a {
+    color: #e7e7e7;
+    border-radius: .3rem;
+    display: block;
+    text-align: center;
+    font-weight: 200;
+    padding: .5rem;
+    margin-block: .3rem;
+}
+
+.submenuMobile li a:hover { background: rgb(90, 84, 97); }
+
+.opcao_menu i { transition: transform .2s linear; }
+
+.opcao_menu.ativo i {
+    transform: rotate(180deg);
+    transition: transform .3s linear;
+}
+
+@media (max-width: 600px) {
+    header.opaco { 
+        background-color: #21212ae4;
+        box-shadow: 0 0 5px rgb(0, 0, 0);
+        backdrop-filter: blur(2px);
+    }
+
+    .menu { display: none; }
+
+    #btnMenu, #btnMenu.ativo { display: block; }
+
+    .menu_mobile.aberto { 
+        max-height: 50vh;
+        transition: all 1s ease-in-out;
+    }
+
+    .opcao_menu {
+        min-width: 120px;
+        text-align: right;
+        padding-inline: .5rem;
+    }
+
+    .opcao_menu.ativo + .submenuMobile {
+        max-height: 28vh;
+    }
+    
+}

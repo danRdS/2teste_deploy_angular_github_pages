@@ -1,4 +1,4 @@
-<header [ngClass]="{'sombreado': sombrear}">
+<header [ngClass]="{'sombreado': sombrear, 'opaco': menu_mobile_aberto}">
     <a routerLink="" class="logo">
         <h1>DRS</h1>
     </a>
@@ -6,17 +6,18 @@
         <li>
             <button type="button" class="opcao_menu">Projetos</button>
             <ul class="submenu">
-                <li><a href="#Bíblia">Bíblia</a></li>
-                <li><a href="#Pokédex">Pokédex</a></li>
-                <li><a href="#Blog">Blog</a></li>
+                <li><a href="https://danrds.github.io/biblia/" target="_blank">Bíblia</a></li>
+                <li><a href="https://danrds.github.io/pokedexDiretoApi/" target="_blank">Pokédex</a></li>
+                <li><a href="https://danrds.github.io/slidesComJs/" target="_blank">Slides</a></li>
+                <li><a href="https://danrds.github.io/menu_blog_com_js_puro/" target="_blank">Blog</a></li>
             </ul>
         </li>
         <li>
             <button type="button" class="opcao_menu">Visite-nos</button>
             <ul class="submenu">
-                <li><a href="#Github">Github</a></li>
-                <li><a href="#Linkedin">Linkedin</a></li>
-                <li><a href="#Youtube">Youtube</a></li>
+                <li><a href="https://github.com/danRdS" target="_blank">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/daniel-ribeiro-da-silva-37b313239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Linkedin</a></li>
+                <li><a href="https://www.youtube.com/channel/UCEkcqlkgSlB5-lPjT4mD0oA" target="_blank">Youtube</a></li>
             </ul>
         </li>
         <li>
@@ -28,4 +29,47 @@
             </ul>
         </li>
     </ul>
+
+    <button type="button" id="btnMenu" [ngClass]="{'ativo': menu_aberto}" (click)="abrirFecharMenu()">
+        <span class="barra"></span>
+        <span class="barra"></span>
+        <span class="barra"></span>
+    </button>
+    <ul class="menu_mobile" [ngClass]="{'aberto': menu_aberto}">
+        <li>
+            <button type="button" class="opcao_menu" (click)="abrirSubmenu(1)" [ngClass]="{'ativo': 1 == submenuAberto}">
+                Projetos
+                <i class="fa-solid fa-chevron-down" id="deres"></i>
+            </button>
+            <ul class="submenuMobile">
+                <li><a href="https://danrds.github.io/biblia/" target="_blank">Bíblia</a></li>
+                <li><a href="https://danrds.github.io/pokedexDiretoApi/" target="_blank">Pokédex</a></li>
+                <li><a href="https://danrds.github.io/slidesComJs/" target="_blank">Slides</a></li>
+                <li><a href="https://danrds.github.io/menu_blog_com_js_puro/" target="_blank">Blog</a></li>
+            </ul>
+        </li>
+        <li>
+            <button type="button" class="opcao_menu" (click)="abrirSubmenu(2)" [ngClass]="{'ativo': 2 == submenuAberto}">
+                Visite-nos
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <ul class="submenuMobile">
+                <li><a href="https://github.com/danRdS" target="_blank">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/daniel-ribeiro-da-silva-37b313239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Linkedin</a></li>
+                <li><a href="https://www.youtube.com/channel/UCEkcqlkgSlB5-lPjT4mD0oA" target="_blank">Youtube</a></li>
+            </ul>
+        </li>
+        <li>
+            <button type="button" class="opcao_menu" (click)="abrirSubmenu(3)" [ngClass]="{'ativo': 3 == submenuAberto}">
+                Cavaleiros
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <ul class="submenuMobile">
+                <li><a href="#ouro">Cavaleiros de ouro</a></li>
+                <li><a href="#prata">Cavaleiros de prata</a></li>
+                <li><a href="#bronze">Cavaleiros de bronze</a></li>
+            </ul>
+        </li>
+    </ul>
+
 </header>
